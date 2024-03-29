@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
+</head>
+
+<body>
+
+    <div id="profileDiv">
+        <h3>My SocialSphere</h3>
+        <div id="imgDiv">
+        </div>
+        <h5></h5>
+        <div id="optDiv">
+            <a href="#myFollowers">
+                <div id="followers">
+                    <h6><i class="fas fa-user-plus"></i> My Followers</h6>
+                </div>
+            </a>
+            <a href="#myReach">
+                <div id="accReach">
+                    <h6><i class="fas fa-chart-line"></i> Accounts Reached</h6>
+                </div>
+            </a>
+            <a href="#myImpressions">
+                <div id="postImpressions">
+                    <h6><i class="fas fa-heart"></i> Posts Impression</h6>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <div id="dataDiv">
+        <div id="myFollowers">
+            <h2 class="headings">My Followers</h2>
+            <div id="followersData">
+                <div id="fbFollowers" class="fb">
+
+                    <h5><i class="fab fa-facebook facebook"></i> Facebook</h5>
+                    <h2>1340</h2>
+                </div>
+                <div id="igFollowers" class="ig">
+                    <h5><i class="fab fa-instagram instagram"></i> Instagram</h5>
+                    <h2>1340</h2>
+                </div>
+                <div id="twFollowers" class="tw">
+                    <h5><i class="fab fa-twitter twitter"></i> Twitter</h5>
+
+                    <h2>1340</h2>
+                </div>
+
+            </div>
+
+            <div class="chart">
+                <canvas id="chart1"></canvas>
+            </div>
+        </div>
+        <div id="myReach">
+
+            <h2 class="headings">Accounts Reach</h2>
+            <div id="reachData">
+                <div id="fbReach" class="fb">
+                    <h5><i class="fab fa-facebook facebook"></i> Facebook</h5>
+                    <h2>1340</h2>
+                </div>
+                <div id="igReach" class="ig">
+                    <h5><i class="fab fa-instagram instagram"></i> Instagram</h5>
+                    <h2>1340</h2>
+                </div>
+                <div id="twReach" class="tw">
+                    <h5><i class="fab fa-twitter twitter"></i> Twitter</h5>
+
+                    <h2>1340</h2>
+                </div>
+            </div>
+            <div class="chart">
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+        <div id="myImpressions">
+            <h2 class="headings">Posts Impressions</h2>
+            <div id="impressionsData">
+                <div id="fbImpressions" class="fb">
+                    <h5><i class="fab fa-facebook facebook"></i> Facebook</h5>
+                    <h2><i class="fas fa-heart"></i> <span>1340</span></h2>
+                    <h2><i class="fas fa-comments"></i> <span>1340</span></h2>
+                </div>
+                <div id="igImpressions" class="ig">
+                    <h5><i class="fab fa-instagram instagram"></i> Instagram</h5>
+                    <h2><i class="fas fa-heart"></i> <span>1340</span></h2>
+                    <h2><i class="fas fa-comments"></i> <span>1340</span></h2>
+
+                </div>
+                <div id="twImpressions" class="tw">
+                    <h5><i class="fab fa-twitter twitter"></i> Twitter</h5>
+
+                    <h2><i class="fas fa-heart"></i> <span>1340</span></h2>
+                    <h2><i class="fas fa-comments"></i> <span>1340</span></h2>
+                </div>
+            </div>
+            <div class="chart">
+                <canvas id="chart3"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+
+</body>
+
+</html>

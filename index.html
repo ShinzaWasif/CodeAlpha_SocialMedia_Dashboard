@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(4, 4, 36);
+            color: white;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        section>h1 {
+            color: rgb(246, 168, 23);
+            font-family: 'Noto Serif';
+            font-size: 35px;
+        }
+
+        section>p {
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        #loginPage {
+            background-color: rgb(10, 10, 67);
+            padding: 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 60%;
+
+        }
+
+        #loginHeading {
+            margin-bottom: 10px;
+        }
+
+        #loginHeading h2 {
+            color: white;
+        }
+
+
+        #formDiv {
+            background-color: rgb(28, 28, 106);
+            text-align: center;
+            height: 80%;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        form {
+            width: 470px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(10, 10, 67);
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 23%;
+            display: block;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>SocialSphere Dashboard</h1>
+        <p>Maximize Your Social Presence with Our Dashboard.</p>
+        <div id="loginPage">
+            <div id="loginHeading">
+                <h2>Login To Proceed</h2>
+            </div>
+
+            <div id="formDiv">
+                <form id="loginForm">
+                    <h5>Enter Your Login Information</h5>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <input id="loginBtn" type="submit" value="Login">
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+
+        const admin = [
+            {
+                name: 'David_Peterson',
+                password: 'davidP214',
+                picture: 'boyImage.jpg',
+                accountReach: ['720 K', '1 M', '560 K'],
+                postsImpression: [['4.5 M', '900 K'], ['7 M', '1.2 M'], ['2 M', '700 K']],
+                followers: ['2.8 M', '3.5 M', '1.9 M']
+            },
+            {
+                name: '_JohnWilliam2',
+                password: 'jwill091',
+                picture: 'boy.jpg',
+                accountReach: ['194 K', '630 K', '300 K'],
+                postsImpression: [['800 K', '200 K'], ['1 M', '340 K'], [' 915K', '330 K']],
+                followers: ['990 K', '1.8 M', '1.1 M']
+            }
+        ];
+
+        localStorage.setItem('admin', JSON.stringify(admin));
+
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var userFound = false;
+
+            admin.forEach(function (user) {
+                if (username === user.name && password === user.password) {
+                    localStorage.setItem('user', JSON.stringify(user));
+                    userFound = true;
+                    window.location.href = "dashboard.html";
+                }
+            });
+
+            if (!userFound) {
+                alert('Incorrect username or password.');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
